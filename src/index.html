@@ -2,21 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Untitled</title>
+    <title>What's Up Denver?</title>
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha256-Whc+9091keLVBxbyK4U697hqB4bcED+6LC64E9GuJkk= sha512-9PPlANXApnRCz1LMx2LPWwRfOKkWjQvH98q2lkxEG6/r6YVoQ+F48btbiuOpDsWHjpZrCfcGrPoVenVl69V09A==" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
+  <nav>
+    <ul id="navLi">
+      <li><a href="#"><span class="glyphicon glyphicon-upload"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-download"></span></a></li>
+    </ul>
+  </nav>
+  <!-- body -->
     <div class="container">
+      <div class="jumbotron">
+        <h1>Events!</h1>
+        <form id="eventSearch">
+          <label for="search">Search</label>
+          <input id="search" type="text" placeholder="keyword">
+          <button id="submit" type="submit"><span class="glyphicon glyphicon-send"></span></button>
+        </form>
+          <ul id="results"></ul>
+      </div>
 
-      <div class="col-md-6 col-m3-offset-3">
-        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d39263.40564477943!2d-104.9821264859056!3d39.74647504579587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1454039710644" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe> -->
-
-
-
-
+    <!--favorites-->
+      <div class="jumbotron">
+        <h1>Favorites!</h1>
 
       </div>
     </div>
