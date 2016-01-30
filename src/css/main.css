@@ -8,7 +8,7 @@ nav {
  top: 30%;
  background-color: rgba(20, 20, 20, .3);
 }
-nav ul {
+ul {
 	list-style: none;
 	padding: 10px;
 	margin: 0;
@@ -16,4 +16,12 @@ nav ul {
 a{
  color: rgba(110, 20, 70, .8);
  font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+}
+
+form {
+	margin-left: 37%;
 }
