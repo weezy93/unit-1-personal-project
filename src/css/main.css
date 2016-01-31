@@ -31,15 +31,32 @@ h1 {
 	text-align: center;
 }
 
-#citySearch {
+form {
+	width: 100%;
+}
+
+#citySearch input, #citySearch button {
 	display: inline-block;
 	width: 80%;
 	margin-left: 15%;
 	float: left;
+	text-align: center;
 }
 hr {
 	clear: both;
 	opacity: 0;
+}
+
+th {
+	text-align: center;
+}
+td {
+	text-align: center;
+}
+
+#artistSearch input{
+	width: 25%;
+	margin-left: 34%;
 }
 
 #artistResults li {
@@ -49,7 +66,10 @@ hr {
 	margin-left: 25%;
 }
 
-.center {
-	/*for form, map, table*/
+#map {
+	width: 90%;
+	margin-left: 5%;
 }
+
+
 
