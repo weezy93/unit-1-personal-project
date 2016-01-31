@@ -1,14 +1,13 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>What's Up Denver?</title>
-
+    <title>What's Up?</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha256-Whc+9091keLVBxbyK4U697hqB4bcED+6LC64E9GuJkk= sha512-9PPlANXApnRCz1LMx2LPWwRfOKkWjQvH98q2lkxEG6/r6YVoQ+F48btbiuOpDsWHjpZrCfcGrPoVenVl69V09A==" crossorigin="anonymous">
-
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
+
   <body>
   <!-- carousel of images? -->
   <nav>
@@ -27,16 +26,19 @@ s<!DOCTYPE html>
           <input id="state" type="text" placeholder="state!">
           <input id="miles" type="number" placeholder="mile-radius!">
           <button id="submit" type="submit"><span class="glyphicon glyphicon-send"></span></button>
-          <!-- <button id="filter"><span class="glyphicon glyphicon-filter"></span></button> -->
+          <br>
+          <p>OR</p>
+          <input id="artist" type="text" placeholder="artist!">
+          <button id="submit"><span class="glyphicon glyphicon-send"></span></button>
         </form>
           <ul id="results"></ul>
       </div>
-     <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12273.261617079217!2d-104.9914715!3d39.73256545!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1454110085602" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+     
 
-    <!--favorites-->
+    <!-- map -->
       <div class="jumbotron">
-        <h1>Favorites!</h1>
-
+        <h1>Take Me There!</h1>
+        <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12273.261617079217!2d-104.9914715!3d39.73256545!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1454110085602" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
