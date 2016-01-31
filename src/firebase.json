@@ -1,0 +1,9 @@
+{
+  "firebase": "whats0up",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

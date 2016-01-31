@@ -2,14 +2,16 @@
 
 $(document).on('ready', function() {
   console.log('sanity check!');
+});
 
   $('form').on("submit", function(event){
   	event.preventDefault();
   	$("#results").empty();
-  	var keyword = $("#search").val();
-  	getEvents(keyword);
+  var city = $('#city').val();
+	var state = $('#state').val();
+	var miles = $('#miles').val();
+  	getEvents(city, state, miles);
   });
-});
 
 
 // keyword search
@@ -20,7 +22,35 @@ $(document).on('ready', function() {
 //make categories static
 // when clicked, their id will link to a new search
 
- // genreurl ='https://www.eventbriteapi.com/v3/categories/103/?token=YGUB3C37CXPEQAMTUJ4C'
+
+function getEvents(city, state, miles) {
+
+	var url = "https://api.bandsintown.com/events/search.json?app_id=WHATS_UP_DENVER&location="+city+","+state+"&radius="+miles;
+	var settings = {
+	  "async": true,
+	  "crossDomain": true,
+	  "dataType": "jsonp",
+	  "url": url,
+	  "method": "GET",
+	}
+
+	$.ajax(settings).done(function(response) {
+			return response.filter(function(value){
+				value.forEach(console.log(value.datetime));
+		});
+	});
+}
+
+// function addToFavorites (){
+
+// }
+
+
+//var url = 'http://api.bandsintown.com/events/search.json?app_id=WHATS_UP_DENVER&location=Denver,CO&radius=10'
+
+
+
+ // general url ='https://www.eventbriteapi.com/v3/categories/103/?token=YGUB3C37CXPEQAMTUJ4C'
 
 
 
@@ -36,15 +66,15 @@ $(document).on('ready', function() {
 // 	});
 // }
 
-function getEvents(){
-	var url = 'https://www.eventbriteapi.com/v3/categories/103/?token=YGUB3C37CXPEQAMTUJ4C';
-	$.get(url).success(function(response){
-				console.log(response);
-			response.subcategories.forEach(function(value){
-				$("#results").append('<li data-id="'+value.name+'"><a href="#">'+value.name+'</a></li>');
-			});
-		});
-	}
+// function getEvents(){
+// 	var url = 'https://www.eventbriteapi.com/v3/categories/103/?token=YGUB3C37CXPEQAMTUJ4C';
+// 	$.get(url).success(function(response){
+// 				console.log(response);
+// 			response.subcategories.forEach(function(value){
+// 				$("#results").append('<li data-id="'+value.name+'"><a href="#">'+value.name+'</a></li>');
+// 			});
+// 		});
+// 	}
 
 
 
