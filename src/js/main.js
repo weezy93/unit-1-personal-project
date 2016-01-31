@@ -73,6 +73,7 @@ function searchArtist(artist){
 	};
 
 	$.ajax(settings).done(function(response){
+		console.log(response);
 		$("#artistResults").append('<li>' +response.name+ '<br><img src=' +response.thumb_url+ '></li>');
 		});
 };
@@ -81,11 +82,17 @@ function searchArtist(artist){
 
 
 
-
-// function searchMaps(){
+var map = $("#map");
+function initMap(){
+	map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+}
 // 	search venue location
 //  have an empty lat and long variable,
-// }
+// click on the venue - needs event delegation
+
 
 
 
