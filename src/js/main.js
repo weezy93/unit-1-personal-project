@@ -26,12 +26,12 @@ function getEvents(city, state, miles) {
 	}
 
 	$.ajax(settings).done(function(response) {
-		console.log(response);
 			return response.filter(function(value){
 				return value;
 
 		}).forEach(function(val){
-			console.log('Date:', val.datetime, 'Artist:', val.artists[0].name);
+			$('#results').append('<li>'+'Date: ', val.datetime, 'Artist: ', val.artists[0].name+'</li>');
+			// console.log('Date:', val.datetime, 'Artist:', val.artists[0].name);
 		});
 	});
 }
