@@ -11,7 +11,7 @@ nav {
 ul {
 	list-style: none;
 	padding: 10px;
-	margin: 0;
+	margin: auto ;
 }
 a{
  color: rgba(110, 20, 70, .8);
@@ -27,4 +27,15 @@ form {
 	width: 80%;
 	margin-left: 15%;
 	float: left;
+}
+hr {
+	clear: both;
+	opacity: 0;
+}
+
+#artistResults li {
+	text-align: center;
+	font-size: 3rem;
+	width: 50%;
+	margin-left: 25%;
 }

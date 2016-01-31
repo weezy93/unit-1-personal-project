@@ -12,13 +12,13 @@
   <!-- carousel of images? -->
   <nav>
     <ul id="navLi">
-      <li><a href="#citySearch"><span class="glyphicon glyphicon-upload"></span></a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-download"></span></a></li>
+      <li><a href="#top"><span class="glyphicon glyphicon-upload"></span></a></li>
+      <li><a href="#bottom"><span class="glyphicon glyphicon-download"></span></a></li>
     </ul>
   </nav>
   <!-- body -->
     <div class="container">
-      <div class="jumbotron">
+      <div id="top" class="jumbotron">
         <h1>Events!</h1>
         <!-- CENTER THIS -->
         <form id="citySearch">
@@ -31,12 +31,14 @@
         <input id="artist" type="text" placeholder="artist!">
           <button id="submit"><span class="glyphicon glyphicon-music"></span></button>
         </form>
-          <ul id="results"></ul>
+        <hr>
+          <ul id="cityResults"></ul>
+          <ul id="artistResults">
       </div>
     <!-- map -->
       <div class="jumbotron">
         <h1>Take Me There!</h1>
-        <div id="map">
+        <div id="bottom">
          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12273.261617079217!2d-104.9914715!3d39.73256545!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1454110085602" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
