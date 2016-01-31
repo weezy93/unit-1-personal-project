@@ -23,5 +23,8 @@ h1 {
 }
 
 form {
-	margin-left: 37%;
+	display: inline-block;
+	width: 80%;
+	margin-left: 15%;
+	float: left;
 }
