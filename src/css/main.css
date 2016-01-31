@@ -1,6 +1,15 @@
 /* add custom styles */
-* {
+/** {
 	color: rgba(110, 20, 70, .8);
+}*/
+
+body {
+	background: url('https://mlmerillat.files.wordpress.com/2012/02/concert.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.jumbotron {
+	/*change opacity*/
 }
 nav {
  position: fixed;
@@ -11,20 +20,36 @@ nav {
 ul {
 	list-style: none;
 	padding: 10px;
-	margin: 0;
+	margin: auto ;
 }
 a{
- color: rgba(110, 20, 70, .8);
- font-weight: bold;
+/* color: rgba(110, 20, 70, .8);
+*/ font-weight: bold;
 }
 
 h1 {
 	text-align: center;
 }
 
-form {
+#citySearch {
 	display: inline-block;
 	width: 80%;
 	margin-left: 15%;
 	float: left;
 }
+hr {
+	clear: both;
+	opacity: 0;
+}
+
+#artistResults li {
+	text-align: center;
+	font-size: 3rem;
+	width: 50%;
+	margin-left: 25%;
+}
+
+.center {
+	/*for form, map, table*/
+}
+

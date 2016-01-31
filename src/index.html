@@ -12,35 +12,54 @@
   <!-- carousel of images? -->
   <nav>
     <ul id="navLi">
-      <li><a href="#citySearch"><span class="glyphicon glyphicon-upload"></span></a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-download"></span></a></li>
+      <li><a href="#top"><span class="glyphicon glyphicon-upload"></span></a></li>
+      <li><a href="#bottom"><span class="glyphicon glyphicon-download"></span></a></li>
     </ul>
   </nav>
   <!-- body -->
     <div class="container">
-      <div class="jumbotron">
-        <h1>Events!</h1>
-        <!-- CENTER THIS -->
+      <div id="top" class="jumbotron">
+        <h1>City Search</h1>
         <form id="citySearch">
           <input id="city" type="text" placeholder="city!" autofocus>
           <input id="state" type="text" placeholder="state!">
           <input id="miles" type="number" placeholder="mile-radius!">
           <button id="submit" type="submit"><span class="glyphicon glyphicon-music"></span></button>
         </form>
+
+    <!-- city results table -->
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Artist</th>
+                <th>Venue</th>
+                <th>Tickets</th>
+              </tr>
+            </thead>
+            <tbody id="cityResults"></tbody>
+          </table>
+        </div>
+          <hr>
+          <!-- artist jumbotron search and results -->
+      <div class="jumbotron">
+        <h1>Artist Search</h1>
         <form id="artistSearch">
         <input id="artist" type="text" placeholder="artist!">
           <button id="submit"><span class="glyphicon glyphicon-music"></span></button>
         </form>
-          <ul id="results"></ul>
-      </div>
+          <ul id="artistResults"></ul>
+       </div>
+
     <!-- map -->
       <div class="jumbotron">
         <h1>Take Me There!</h1>
-        <div id="map">
+        <div id="bottom" class="map">
          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12273.261617079217!2d-104.9914715!3d39.73256545!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1454110085602" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> <!-- container div -->
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
