@@ -3,9 +3,12 @@ $(document).on('ready', function() {
   console.log('sanity check!');
 });
 
+// event delegation for maps api, for lat and long
+
   $('#citySearch').on("submit", function(event){
   	event.preventDefault();
-  	$('#cityResults').empty();
+  	$('<table>').empty();
+
   var city = $('#city').val();
 	var state = $('#state').val();
 	var miles = $('#miles').val();
@@ -34,16 +37,27 @@ var settings = {
 	  "method": "GET",
 	};
 
+// show both date and artist, click on this to bring more information about the event
+// link to search the map for the venue using the lat and long
+// <td><button>Get Tickets</button></td>
+
 	$.ajax(settings).done(function(response) {
-		console.log(response);
 			return response.filter(function(value){
 				return value;
+
 		}).forEach(function(val){
-			console.log(val);
-			$('#cityResults').append('<li data-id="'+val.artists[0].name+'">'+'Date: ', val.datetime, ' Artist: ', val.artists[0].name+'</li>');
+			var dateTime = val.datetime;
+			var x = dateTime.split('-');
+			var date = x[1] +' '+ x[2].split('T')[0]+' '+x[0];
+
+			var musician = val.artists[0].name;
+			var venue =	val.venue.name;
+			var ticketUrl = val.ticket_url;
+			$('#cityResults').append('<tr><td>'+date+'</td><td>'+musician+'</td><td>'+venue+'</td><td><a href='+ticketUrl+' target="_blank"><button>Get Tickets</button></a></td></tr>');
 		});
 	});
 }
+// data-id="'+val.artists[0].name+'"   - id for li append
 
 // search by artist
 
@@ -68,23 +82,10 @@ function searchArtist(artist){
 
 
 
-// keyword search
-// filter after searching based on category
-// filter by price
-// add to their favorite's section
-
-//make categories static
-// when clicked, their id will link to a new search
-
-// function getEvents(){
-// 	var url = 'https://www.eventbriteapi.com/v3/categories/103/?token=YGUB3C37CXPEQAMTUJ4C';
-// 	$.get(url).success(function(response){
-// 				console.log(response);
-// 			response.subcategories.forEach(function(value){
-// 				$("#results").append('<li data-id="'+value.name+'"><a href="#">'+value.name+'</a></li>');
-// 			});
-// 		});
-// 	}
+// function searchMaps(){
+// 	search venue location
+//  have an empty lat and long variable,
+// }
 
 
 
