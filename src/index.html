@@ -12,7 +12,7 @@
   <!-- carousel of images? -->
   <nav>
     <ul id="navLi">
-      <li><a href="#"><span class="glyphicon glyphicon-upload"></span></a></li>
+      <li><a href="#citySearch"><span class="glyphicon glyphicon-upload"></span></a></li>
       <li><a href="#"><span class="glyphicon glyphicon-download"></span></a></li>
     </ul>
   </nav>
@@ -21,24 +21,24 @@
       <div class="jumbotron">
         <h1>Events!</h1>
         <!-- CENTER THIS -->
-        <form id="eventSearch">
+        <form id="citySearch">
           <input id="city" type="text" placeholder="city!" autofocus>
           <input id="state" type="text" placeholder="state!">
           <input id="miles" type="number" placeholder="mile-radius!">
-          <button id="submit" type="submit"><span class="glyphicon glyphicon-send"></span></button>
-          <br>
-          <p>OR</p>
-          <input id="artist" type="text" placeholder="artist!">
-          <button id="submit"><span class="glyphicon glyphicon-send"></span></button>
+          <button id="submit" type="submit"><span class="glyphicon glyphicon-music"></span></button>
+        </form>
+        <form id="artistSearch">
+        <input id="artist" type="text" placeholder="artist!">
+          <button id="submit"><span class="glyphicon glyphicon-music"></span></button>
         </form>
           <ul id="results"></ul>
       </div>
-     
-
     <!-- map -->
       <div class="jumbotron">
         <h1>Take Me There!</h1>
-        <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12273.261617079217!2d-104.9914715!3d39.73256545!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1454110085602" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+        <div id="map">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12273.261617079217!2d-104.9914715!3d39.73256545!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1454110085602" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
