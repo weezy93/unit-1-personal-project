@@ -14,15 +14,6 @@ $(document).on('ready', function() {
   });
 
 
-// keyword search
-// filter after searching based on category
-// filter by price
-// add to their favorite's section
-
-//make categories static
-// when clicked, their id will link to a new search
-
-
 function getEvents(city, state, miles) {
 
 	var url = "https://api.bandsintown.com/events/search.json?app_id=WHATS_UP_DENVER&location="+city+","+state+"&radius="+miles;
@@ -35,15 +26,35 @@ function getEvents(city, state, miles) {
 	}
 
 	$.ajax(settings).done(function(response) {
+		console.log(response);
 			return response.filter(function(value){
-				value.forEach(console.log(value.datetime));
+				return value;
+
+		}).forEach(function(val){
+			console.log('Date:', val.datetime, 'Artist:', val.artists[0].name);
 		});
 	});
 }
 
+
+
+
+
 // function addToFavorites (){
 
 // }
+
+
+// keyword search
+// filter after searching based on category
+// filter by price
+// add to their favorite's section
+
+//make categories static
+// when clicked, their id will link to a new search
+
+
+
 
 
 //var url = 'http://api.bandsintown.com/events/search.json?app_id=WHATS_UP_DENVER&location=Denver,CO&radius=10'
