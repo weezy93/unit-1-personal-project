@@ -28,21 +28,17 @@ function getEvents(city, state, miles) {
 	$.ajax(settings).done(function(response) {
 			return response.filter(function(value){
 				return value;
-
 		}).forEach(function(val){
-			$('#results').append('<li>'+'Date: ', val.datetime, 'Artist: ', val.artists[0].name+'</li>');
-			// console.log('Date:', val.datetime, 'Artist:', val.artists[0].name);
+			$('#results').append('<hr><li data-id="'+val.artists[0].name+'"><'+'Date: ', val.datetime, 'Artist: ', val.artists[0].name+'</li>');
 		});
 	});
 }
 
+// artist
 
 
 
 
-// function addToFavorites (){
-
-// }
 
 
 // keyword search
@@ -52,30 +48,6 @@ function getEvents(city, state, miles) {
 
 //make categories static
 // when clicked, their id will link to a new search
-
-
-
-
-
-//var url = 'http://api.bandsintown.com/events/search.json?app_id=WHATS_UP_DENVER&location=Denver,CO&radius=10'
-
-
-
- // general url ='https://www.eventbriteapi.com/v3/categories/103/?token=YGUB3C37CXPEQAMTUJ4C'
-
-
-
-// function getEvents(keyword){
-// var url = 'https://www.eventbriteapi.com/v3/categories/?token=YGUB3C37CXPEQAMTUJ4C';
-
-// 	$.get(url).success(function(response){
-// 		console.log(response);
-// 			response.categories.forEach(function(value){
-// 					console.log(value.name);
-// 					$("#results").append('<li data-id="'+value.id+'"><a href="#">'+value.name+'</a></li>');
-// 		});
-// 	});
-// }
 
 // function getEvents(){
 // 	var url = 'https://www.eventbriteapi.com/v3/categories/103/?token=YGUB3C37CXPEQAMTUJ4C';
