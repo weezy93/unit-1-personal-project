@@ -130,7 +130,7 @@ function mapInitialize() {
   map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
-var images = ["images/sf.jpg", "images/denver.jpg", "images/portland.jpg", "images/nyc.jpg"];
+var images = ["images/sf.jpg", "images/denver.jpg", "images/portland.jpg", "images/nyc.jpg","images/austin.jpg","images/seattle.jpg"];
 
 function backgroundPictures(images){
 	var counter = 0;
