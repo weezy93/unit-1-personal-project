@@ -1,6 +1,10 @@
 // add scripts
+var map;
+
 $(document).on('ready', function() {
   console.log('sanity check!');
+  mapInitialize();
+  backgroundPictures(images);
 });
 
 //event handlers
@@ -21,10 +25,13 @@ $('#artistSearch').on("submit", function(event){
 });
 
 // event delegation for maps api, for lat and long
-$(".table").on("click", 'td', function(event){
-	event.preventDefault();
-	console.log( $(this).text());
-});
+// $(".table").on("click", 't', function(event){
+// 	event.preventDefault();
+// 	console.log( $(this).text());
+// });
+
+// ---------------------------------------- function declarations
+
 
 
 //city search function
@@ -40,11 +47,17 @@ var settings = {
 	};
 
 	$.ajax(settings).done(function(response) {
+
 			$("#cityResults tr").text("");
+
+			// var firstLatitude = response[0].venue.latitude;
+			// var firstLongitude = response[0].venue.longitude;
+			// map.panTo(firstLatitude. firstLongitude);
+
 			return response.filter(function(value){
 				return value;
-
 		}).forEach(function(val){
+
 			var dateTime = val.datetime;
 			var x = dateTime.split('-');
 			var date = x[1] +' '+ x[2].split('T')[0]+' '+x[0];
@@ -52,7 +65,35 @@ var settings = {
 			var musician = val.artists[0].name;
 			var venue =	val.venue.name;
 			var ticketUrl = val.ticket_url;
+
 			$('#cityResults').append('<tr><td>'+date+'</td><td>'+musician+'</td><td>'+venue+'</td><td><a href='+ticketUrl+' target="_blank"><button>Get Tickets</button></a></td></tr>');
+
+			// adding venue markers to map
+
+			var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">'+venue+'</h1>'+
+      '<div id="bodyContent">'+
+      date+
+      '</div>'+
+      '</div>';
+
+
+			var myLatLng = {lat: val.venue.latitude, lng: val.venue.longitude};
+			var marker = new google.maps.Marker({
+		    position: myLatLng,
+		    map: map,
+		    clickable: true
+		  });
+
+		  marker.info = new google.maps.InfoWindow({
+				content: contentString
+			});
+
+			google.maps.event.addListener(marker, "click", function(){
+				marker.info.open(map, marker);
+			});
 		});
 	});
 }
@@ -60,7 +101,7 @@ var settings = {
 // search by artist
 
 function searchArtist(artist){
-	var url = "http://api.bandsintown.com/artists/"+artist+".json?api_version=2.0&app_id=WHATS_UP"
+	var url = "http://api.bandsintown.com/artists/"+artist+".json?api_version=2.0&app_id=WHATS_UP";
 
 	var settings = {
 	  "async": true,
@@ -76,29 +117,44 @@ function searchArtist(artist){
 		});
 }
 
+// map bullshit
 
 
+function mapInitialize() {
+	var mapProp = {
+    center: new google.maps.LatLng(39.7392, -104.9903),
+    zoom: 12,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
 
-// set map to start
+  map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
 
-// var map = $("#map");
+var images = ["images/sf.jpg", "images/denver.jpg", "images/portland.jpg", "images/nyc.jpg"];
 
-var latitude = 39.7392;
-var longitude = -104.9903;
-var center = {lat: latitude, lng: longitude};
-function initMap(center){
-	map = new google.maps.Map($("#map"), {
-    center: center,
-    zoom: 8
-  });
+function backgroundPictures(images){
+	var counter = 0;
+	var loop = setInterval(function(){
+		$("body").css("background", 'url('+images[counter]+')');
+			counter++;
+			if(counter === images.length){
+				counter = 0;
+			}
+	}, 5000 );
 }
 
 
 
 
-// 	search venue location
-//  have an empty lat and long variable,
-// click on the venue - needs event delegation
+/* NEED TO FIX
+- map setCenter() function to work
+- artist search function to search artist events
+- background url initial url
+- background url fade in / out
+- background url fit page
+-
+
+*/
 
 
 
