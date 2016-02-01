@@ -5,7 +5,7 @@ html {
 
 body {
 	width: 100%;
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 }
 .jumbotron {
