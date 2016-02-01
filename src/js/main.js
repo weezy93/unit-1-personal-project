@@ -3,12 +3,10 @@ $(document).on('ready', function() {
   console.log('sanity check!');
 });
 
-// event delegation for maps api, for lat and long
+//event handlers
 
   $('#citySearch').on("submit", function(event){
   	event.preventDefault();
-  	$('<table>').empty();
-
   var city = $('#city').val();
 	var state = $('#state').val();
 	var miles = $('#miles').val();
@@ -22,10 +20,14 @@ $('#artistSearch').on("submit", function(event){
 		searchArtist(artist);
 });
 
+// event delegation for maps api, for lat and long
+$(".table").on("click", 'td', function(event){
+	event.preventDefault();
+	console.log( $(this).text());
+});
 
 
-// search by city
-
+//city search function
 function getEvents(city, state, miles) {
 	var url = "https://api.bandsintown.com/events/search.json?api_version=2.0&app_id=WHATS_UP&location="+city+","+state+"&radius="+miles;
 
@@ -37,11 +39,8 @@ var settings = {
 	  "method": "GET",
 	};
 
-// show both date and artist, click on this to bring more information about the event
-// link to search the map for the venue using the lat and long
-// <td><button>Get Tickets</button></td>
-
 	$.ajax(settings).done(function(response) {
+			$("#cityResults tr").text("");
 			return response.filter(function(value){
 				return value;
 
@@ -57,7 +56,6 @@ var settings = {
 		});
 	});
 }
-// data-id="'+val.artists[0].name+'"   - id for li append
 
 // search by artist
 
@@ -76,19 +74,28 @@ function searchArtist(artist){
 		console.log(response);
 		$("#artistResults").append('<li>' +response.name+ '<br><img src=' +response.thumb_url+ '></li>');
 		});
-};
+}
 
 
 
 
+// set map to start
 
-var map = $("#map");
-function initMap(){
-	map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
+// var map = $("#map");
+
+var latitude = 39.7392;
+var longitude = -104.9903;
+var center = {lat: latitude, lng: longitude};
+function initMap(center){
+	map = new google.maps.Map($("#map"), {
+    center: center,
     zoom: 8
   });
 }
+
+
+
+
 // 	search venue location
 //  have an empty lat and long variable,
 // click on the venue - needs event delegation
