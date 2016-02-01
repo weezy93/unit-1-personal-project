@@ -1,31 +1,29 @@
 /* add custom styles */
-/** {
-	color: rgba(110, 20, 70, .8);
-}*/
+html {
+	width: 100%;
+}
 
 body {
-	background: url('https://mlmerillat.files.wordpress.com/2012/02/concert.jpg');
+	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 .jumbotron {
-	/*change opacity*/
+	background-color: rgba(48, 48, 48, .6);
 }
 nav {
  position: fixed;
+ padding-right: 5px;
  right: 0;
  top: 30%;
- background-color: rgba(20, 20, 20, .3);
+ background-color: rgba(20, 20, 20, .7);
 }
 ul {
 	list-style: none;
 	padding: 10px;
 	margin: auto ;
 }
-a{
-/* color: rgba(110, 20, 70, .8);
-*/ font-weight: bold;
-}
+
 
 h1 {
 	text-align: center;
@@ -34,14 +32,18 @@ h1 {
 form {
 	width: 100%;
 }
+.glyphicon {
+	color:  #0ac292;
+}
 
 #citySearch input, #citySearch button {
 	display: inline-block;
 	width: 80%;
-	margin-left: 15%;
+	margin-left: 10%;
 	float: left;
 	text-align: center;
 }
+
 hr {
 	clear: both;
 	opacity: 0;
@@ -52,6 +54,9 @@ th {
 }
 td {
 	text-align: center;
+}
+td:hover {
+	color: #0ce3ac;
 }
 
 #artistSearch input{
@@ -66,10 +71,15 @@ td {
 	margin-left: 25%;
 }
 
-#map {
+#googleMap {
 	width: 90%;
 	margin-left: 5%;
+	height: 500px;
 }
 
-
+#content {
+	font-size: 1em;
+	text-align: center;
+	color: black;
+}
 
