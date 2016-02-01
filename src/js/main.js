@@ -49,10 +49,13 @@ var settings = {
 	$.ajax(settings).done(function(response) {
 
 			$("#cityResults tr").text("");
-
+				var LatLng = {
+					lat: response[0].venue.latitude,
+					lng: response[0].venue.longitude
+				}
 			// var firstLatitude = response[0].venue.latitude;
 			// var firstLongitude = response[0].venue.longitude;
-			// map.panTo(firstLatitude. firstLongitude);
+			map.setCenter(LatLng);
 
 			return response.filter(function(value){
 				return value;
@@ -130,10 +133,11 @@ function mapInitialize() {
   map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
-var images = ["images/sf.jpg", "images/denver.jpg", "images/portland.jpg", "images/nyc.jpg"];
+var images = ["images/sf.jpg", "images/denver.jpg", "images/portland.jpg", "images/nyc.jpg","images/austin.jpg","images/seattle.jpg"];
 
 function backgroundPictures(images){
 	var counter = 0;
+	$('body').css('background', 'url('+images[counter]+')');
 	var loop = setInterval(function(){
 		$("body").css("background", 'url('+images[counter]+')');
 			counter++;
@@ -149,7 +153,6 @@ function backgroundPictures(images){
 /* NEED TO FIX
 - map setCenter() function to work
 - artist search function to search artist events
-- background url initial url
 - background url fade in / out
 - background url fit page
 -
