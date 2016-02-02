@@ -1,13 +1,19 @@
 /* add custom styles */
 html {
 	width: 100%;
+	font-size:
 }
 
 body {
 	width: 100%;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
+	font-family: "bebas-neue", sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	transition: all 1s;
 }
+
 .jumbotron {
 	background-color: rgba(48, 48, 48, .6);
 }
@@ -25,9 +31,9 @@ ul {
 	margin: auto ;
 }
 
-
 h1 {
 	text-align: center;
+	font-family: 'bebas-neue';
 }
 
 form {
@@ -45,13 +51,23 @@ form {
 	text-align: center;
 }
 
+#citySearch button {
+	margin-bottom: 2%;
+}
+
 hr {
 	clear: both;
 	opacity: 0;
 }
 
+table {
+	font-family: 'bebas-neue';
+
+}
+
 th {
 	text-align: center;
+	text-transform: underline;
 }
 td {
 	text-align: center;
@@ -62,7 +78,7 @@ td:hover {
 
 #artistSearch input{
 	width: 25%;
-	margin-left: 34%;
+	text-align: center;
 }
 
 #artistResults li {
@@ -78,9 +94,14 @@ td:hover {
 	height: 500px;
 }
 
-#content {
-	font-size: 1em;
+#firstHeading{
+	text-transform: bold;
+}
+.content {
+	text-transform: bold;
 	text-align: center;
 	color: black;
+	font-size: 1.5rem;
 }
+
 

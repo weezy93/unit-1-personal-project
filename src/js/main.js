@@ -73,12 +73,12 @@ var settings = {
 
 			// adding venue markers to map
 
-			var contentString = '<div id="content">'+
+			var contentString = '<div id="content" class="content">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">'+venue+'</h1>'+
+      '<h1 id="firstHeading" class="firstHeading content">'+"•"+venue+"•"+'</h1>'+
       '<div id="bodyContent">'+
-      date+
+      date+ " • " +musician+
       '</div>'+
       '</div>';
 
@@ -133,13 +133,13 @@ function mapInitialize() {
   map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
-var images = ["images/sf.jpg", "images/denver.jpg", "images/portland.jpg", "images/nyc.jpg","images/austin.jpg","images/seattle.jpg"];
+var images = ["images/chicago.jpg", "images/sf.jpg", "images/denver.jpg", "images/portland.jpg", "images/nyc.jpg","images/austin.jpg","images/seattle.jpg"];
 
 function backgroundPictures(images){
 	var counter = 0;
-	$('body').css('background', 'url('+images[counter]+')');
+	$('body').css('background-image', 'url('+images[counter]+')', 'transition', 'all 1s');
 	var loop = setInterval(function(){
-		$("body").css("background", 'url('+images[counter]+')');
+		$("body").css("background-image", 'url('+images[counter]+')');
 			counter++;
 			if(counter === images.length){
 				counter = 0;
@@ -151,7 +151,6 @@ function backgroundPictures(images){
 
 
 /* NEED TO FIX
-- map setCenter() function to work
 - artist search function to search artist events
 - background url fade in / out
 - background url fit page
