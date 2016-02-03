@@ -24,11 +24,6 @@ $('#artistSearch').on("submit", function(event){
 		searchArtist(artist);
 });
 
-// event delegation for maps api, for lat and long
-// $(".table").on("click", 't', function(event){
-// 	event.preventDefault();
-// 	console.log( $(this).text());
-// });
 
 // ---------------------------------------- function declarations
 
@@ -53,8 +48,6 @@ var settings = {
 					lat: response[0].venue.latitude,
 					lng: response[0].venue.longitude
 				}
-			// var firstLatitude = response[0].venue.latitude;
-			// var firstLongitude = response[0].venue.longitude;
 			map.setCenter(LatLng);
 
 			return response.filter(function(value){
@@ -101,24 +94,6 @@ var settings = {
 	});
 }
 
-// search by artist
-
-function searchArtist(artist){
-	var url = "http://api.bandsintown.com/artists/"+artist+".json?api_version=2.0&app_id=WHATS_UP";
-
-	var settings = {
-	  "async": true,
-	  "crossDomain": true,
-	  "dataType": "jsonp",
-	  "url": url,
-	  "method": "GET",
-	};
-
-	$.ajax(settings).done(function(response){
-		console.log(response);
-		$("#artistResults").append('<li>' +response.name+ '<br><img src=' +response.thumb_url+ '></li>');
-		});
-}
 
 // map bullshit
 
@@ -144,7 +119,7 @@ function backgroundPictures(images){
 			if(counter === images.length){
 				counter = 0;
 			}
-	}, 5000 );
+	}, 7000 );
 }
 
 
@@ -152,9 +127,7 @@ function backgroundPictures(images){
 
 /* NEED TO FIX
 - artist search function to search artist events
-- background url fade in / out
 - background url fit page
--
 
 */
 

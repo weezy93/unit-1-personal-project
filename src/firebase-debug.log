@@ -1,0 +1,17 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/5.3.0/bin/node /Users/Weezy/.npm-packages/bin/firebase deploy
+[debug] Platform:     darwin
+[debug] Node Version: v5.3.0
+[debug] Time:         Wed Feb 03 2016 11:53:45 GMT-0700 (MST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/whats0up/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/whats0up/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'whats0up'...
+[info] 
+[info] i  deploying hosting
+[info] i  preparing . directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/firebase/whats0up/uploads/-K9cTvkF4kDZtKy8zgkG?token=XXX&fileCount=12&message= 
