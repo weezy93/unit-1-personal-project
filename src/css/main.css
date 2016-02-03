@@ -49,6 +49,7 @@ form {
 	margin-left: 10%;
 	float: left;
 	text-align: center;
+	opacity: .7;
 }
 
 #citySearch button {
