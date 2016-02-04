@@ -32,3 +32,4 @@
 [info] i  deploying hosting
 [info] i  preparing . directory for upload...
 [debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/firebase/spare00change/uploads/-K9hPWSAWdV0R6QimftC?token=XXX&fileCount=12&message= 
+[debug] <<< HTTP RESPONSE 200
