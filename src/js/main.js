@@ -61,7 +61,7 @@ var settings = {
 			var musician = val.artists[0].name;
 			var venue =	val.venue.name;
 			var ticketUrl = val.ticket_url;
-
+			$('th').css("visibility", "visible");
 			$('#cityResults').append('<tr><td>'+date+'</td><td>'+musician+'</td><td>'+venue+'</td><td><a href='+ticketUrl+' target="_blank"><button>Get Tickets</button></a></td></tr>');
 
 			// adding venue markers to map

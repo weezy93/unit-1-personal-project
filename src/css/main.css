@@ -13,11 +13,35 @@ body {
 	text-align: center;
 	transition: all 1s;
 }
+.full-width {
+	width: 100%;
+}
 
 .jumbotron {
-	background-color: rgba(48, 48, 48, .6);
+	background-color: rgba(48, 48, 48, .4);
 }
-nav {
+
+.navbar {
+	background-color: rgba(40, 40, 40, 1);
+}
+
+p.navbar-brand {
+	position: absolute;
+	right: 0;
+	display: inline-block;
+	color: #0ce3ac!important;
+}
+.navbar-toggle {
+	float: left;
+	display: inline-block;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #0CE3AC;
+}
+
+
+#sideNav {
  position: fixed;
  padding-right: 15px;
  right: 0;
@@ -66,6 +90,7 @@ table {
 }
 
 th {
+	visibility: hidden;
 	text-align: center;
 	text-transform: underline;
 }
@@ -92,6 +117,7 @@ td:hover {
 	width: 90%;
 	margin-left: 5%;
 	height: 500px;
+	border: 2px solid #EE9814;
 }
 
 #firstHeading{
@@ -104,4 +130,20 @@ td:hover {
 	font-size: 1.5rem;
 }
 
+
+
+
+
+
+
+.navbar-collapse.collapse {
+    display: none!important;
+}
+
+.navbar-collapse.collapse.in{
+    display: block!important;
+}
+.navbar-toggle {
+        display: block;
+    }
 
