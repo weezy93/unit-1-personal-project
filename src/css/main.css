@@ -14,7 +14,8 @@ body {
 	transition: all 1s;
 }
 .full-width {
-	width: 100%;
+	width: 95%;
+	margin-left: 5%;
 }
 
 .jumbotron {
